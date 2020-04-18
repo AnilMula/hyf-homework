@@ -1,0 +1,182 @@
+    /* 
+    used flex box for header
+    NO flex box for navigation because they are in list
+    used flex box for body part
+    used flex box for footer 
+    */
+
+html,body{
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+.head-portion{
+    background-color: rgb(255, 253, 232);
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.head-portion > div{
+    position: relative;
+    left: 150px;
+    line-height: 0rem;
+}
+.nav-portion{
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+}
+.nav-portion > div {
+    position: relative;
+    left: 150px;  
+}
+a{
+    padding: 6px;
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    font-size: 1.2rem;
+    color: salmon;
+}
+.nav-item > ul > li{
+    display: inline;
+    margin: 0em;
+}
+.image-portion img{
+    width: 100%;
+    height: 300px;
+}
+.headings-text{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.document-part{
+    position: relative;
+    left: 150px; 
+    display: flex;
+    flex-direction: row;
+}
+.left-col{
+    font-size: 0.9rem;
+    width:300px;  
+}
+.right-col{
+    margin-left: 6rem;
+    width:600px;
+    font-size: 1.1rem;    
+}
+.cell{
+     width: 4rem;
+     height: 4rem;
+     padding: 2rem;
+}
+.footer-portion{
+    background-color: rgb(54, 54, 151);
+    color:white;    
+}
+.footer-part{    
+    position: relative;
+    left: 150px; 
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-details2{
+    margin-left: 7em;
+}
+.footer-details3{
+    margin-left: 6em;
+}
+.footer-details4{
+    margin-left: 6em;
+}
+ul{
+    padding-left: 0px;
+}
+ul li{
+    list-style: none;
+    font-size: 18px;
+}
+.footer-heading{
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+@media only screen and (max-width: 600px){
+    .head-portion{
+        background-color: rgb(104, 235, 159);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .head-portion > div{
+        position: relative;
+        left: 0rem;
+        /* line-height: 0rem; */
+    }
+    h1{
+        font-size: 1.3rem;
+    }
+    .nav-portion{
+        background-color: rgb(24, 53, 43);
+        display: flex;
+        height: 100px;
+        flex-direction: column;
+        justify-content: left;
+    }
+    .nav-portion > div{
+        left: 0px;
+        
+    }
+    .nav-item > ul > li{
+        display: list-item;
+        line-height: 1.2rem;
+    }
+    .image-portion img{
+        width: 100%;
+        height: 300px;
+    }
+    .document-part{
+        width:100%;
+        position: relative;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .left-col{
+        position: relative;
+        left: 0px;
+        width: 100%;
+        font-size: 1rem;    
+    }
+    .right-col{
+        position: relative;
+        left: 0px;
+        margin-left: 0rem;
+        width: 100%;
+        font-size: 1rem;    
+    }
+    .footer-part{
+        position: relative;
+        left: 1rem; 
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-details2{
+        margin-left: 0em;
+    }
+    .footer-details3{
+        margin-left: 0em;
+    }
+    .footer-details4{
+        margin-left: 0em;
+    }
+    .footer-horizantal-line{
+        display: none;
+    }
+    .footer-heading{
+        color: indianred;
+    }
+}
