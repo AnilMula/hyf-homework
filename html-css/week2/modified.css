@@ -71,6 +71,9 @@ a:hover{
      height: 4rem;
      padding: 2rem;
 }
+p{
+    text-align: justify;
+}
 .footer-portion{
     background-color: rgb(54, 54, 151);
     color:white;    
