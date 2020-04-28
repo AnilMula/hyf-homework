@@ -24,7 +24,7 @@
         <div class="tabs">
             <div class="tab">
               <input type="radio" id="tab-1" name="tab-group-1" checked>
-              <label for="tab-1">Tab One</label>
+              <label for="tab-1">Shipping Details</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                 <p>
@@ -41,7 +41,7 @@
                 </p>
                 <h2>Step:1/4-tell us who you are?</h2>
                 <!-- progress bar 25% for each page -->             
-                <label for="file">Progress</label>
+                <label for="file" class="form-label">Progress</label>
                 <progress id="file" value="25" max="100" class="progress-bar"> 25% </progress><br><br><br>
                 <form action="home.html" method="GET">
                   <label for="name" class="form-label">FirstName*</label>
@@ -83,13 +83,13 @@
             </div>
             <div class="tab">
               <input type="radio" id="tab-2" name="tab-group-1">
-              <label for="tab-2">Tab Two</label>
+              <label for="tab-2">Register</label>
               <div class="content">
                 <div>
                   <h1>Sign up to yourcustomtailor.com</h1>
                   <h2>Step:2/4-tell us who you are?</h2>
                   <!-- progress bar 25% for each page -->             
-                  <label for="file">Progress</label><br><br>
+                  <label for="file" class="form-label">Progress</label>
                   <progress id="file" value="50" max="100" class="progress-bar"> 50% </progress>
                   <p>
                     We will probably need to stay in touch somehow. Let us know how can we reach you?
@@ -119,12 +119,12 @@
             </div>
             <div class="tab">
               <input type="radio" id="tab-3" name="tab-group-1">
-              <label for="tab-3">Tab Three</label>
+              <label for="tab-3">Select Items</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                   <h2>Step:3/4-tell us who you are?</h2>
                   <!-- progress bar 25% for each page -->             
-                  <label for="file">Progress</label><br><br>
+                  <label for="file" class="form-label">Progress</label>
                   <progress id="file" value="75" max="100" class="progress-bar"> 75% </progress>
                   <p>
                     What kind of items you are interested in?
@@ -140,19 +140,39 @@
                     <input type="checkbox">
                     <label class="form-label">Handbags</label>
                     <input type="checkbox">
+                    <div class="grid-container">
+                      <img src="images/image1.jpg" class="grid-item" alt="image1">
+                      <img src="images/image2.jpg" class="grid-item" alt="image2">
+                      <img src="images/image3.jpg" class="grid-item" alt="image3">
+                      <img src="images/image4.jpg" class="grid-item" alt="image4">
+                      <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
+                      <img src="images/image5.jpg" class="grid-item" alt="image5">
+                      <img src="images/image6.jpg" class="grid-item" alt="image6">  
+                      <img src="images/image7.jpg" class="grid-item" alt="image7">
+                      <img src="images/image8.jpg" class="grid-item" alt="image8">
+                      <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
+                      <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
+                    </div>
                     <label type="button" class="button-nextstep" for="tab-4">Next Step </label>
                   </form>
+                  
+                  
               </div>
             </div>
             <div class="tab">
               <input type="radio" id="tab-4" name="tab-group-1">
-              <label for="tab-4">Tab Four</label>
+              <label for="tab-4">Payments</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                   <h2>Step:4/4-Payment</h2>
                   <!-- progress bar 25% for each page -->             
-                  <label for="file">Progress</label><br><br>
-                  <progress id="file" value="100" max="100" class="progress-bar"> 100% </progress>
+                  <label for="file" class="form-label">Progress</label>
+                  <progress id="file" value="98" max="100" class="progress-bar"> 98% </progress>
                   <p>
                     Please fill in your payment data
                   </p>
