@@ -1,0 +1,102 @@
+/*code for tabs in the document BEGIN*/
+.tabs {
+    position: relative;
+    min-height: 60rem; /* This part sucks */
+    clear: both;
+    margin: 25px 0;
+  }
+  .tab {
+    float: left;
+  }
+  .tab label {
+    background: #eee;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+  }
+  .tab [type="radio"] {
+    opacity: 0;
+  }
+  .content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: white;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  .content > * {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+  }
+  [type="radio"]:focus ~ label {
+    ouline: 2px solid blue;
+  }
+  [type="radio"]:checked ~ label {
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 2;
+  }
+  [type="radio"]:checked ~ label ~ .content {
+    z-index: 1;
+  }
+  [type="radio"]:checked ~ label ~ .content > * {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* code for tabs in the document END*/
+/* header-container is a container for logo and links */
+.header-container{
+  display: flex;
+  justify-content: space-between; 
+  /*it ill display one on the left and one on the right*/
+}
+  /* dimenssions and attributes for the logo */
+  .our-logo{
+    width: 5rem;
+    height: 5rem;
+  }
+  /* to increase of website name  */
+  .webaddress{
+    font-size: 5rem;
+  }
+  /* navigtion links */
+  .navigation-links{
+    align-self: center;
+  }
+  /* to increase progress bar length */
+  .progress-bar{
+    width: 98%;
+  }
+ /* form label different from tab label */
+ label.form-label{
+  border: none;
+  background: none;
+ }
+textarea {
+  border-radius: 5px; 
+}
+/* checkbox hack */
+/* to dispaly and hide street address and zip code */
+#address:checked  ~ .control-me{
+  display: none;
+}
+label.profile-description {
+  display: block;
+  margin-bottom: 10px;
+}
+.button-nextstep{
+  float: right;
+  margin-right: 5rem;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  z-index: 2;
+}
