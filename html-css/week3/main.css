@@ -15,6 +15,8 @@
     margin-left: -1px;
     position: relative;
     left: 1px;
+    font-size: 1rem;
+    
   }
   .tab [type="radio"] {
     opacity: 0;
@@ -69,6 +71,7 @@
   .webaddress{
     font-size: 5vw;
     color: lightcoral;
+    align-self: center;
   }
   /* navigtion links */
   .navigation-links{
@@ -93,6 +96,10 @@
  label.form-label{
   border: none;
   background: none;
+ }
+ /* to display last name in the same line */
+ .last-name-property{
+   display: flex;
  }
 textarea {
   border-radius: 5px; 
@@ -126,6 +133,10 @@ label.profile-description {
   margin: 10px;
   text-align: center;
 }
+.grid-item-image{
+  width: 15vw;
+  height: 15vw;
+}
 .checkbox-under-grid-item{
  justify-self: right;
  margin-right: 2rem;
@@ -133,4 +144,28 @@ label.profile-description {
 input{
   border-radius: 1rem;
   height: 1.5rem;
+  /* width: 15vw; */
+}
+.dropdown-list-properties{
+  height: 3vh;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 750px){
+  .tabs {
+    position: relative;
+    height: 100rem; /* This part sucks */
+    clear: both;
+    margin: 25px 0;
+  }
+  .last-name-property{
+    display: flex;
+    flex-direction: column;
+  } 
+  textarea{
+    width: 100%;  
+  }
+  .checkbox-under-grid-item{
+    justify-self: right;
+    margin-right: 2rem;
+   }
 }

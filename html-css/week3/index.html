@@ -44,38 +44,44 @@
                 <label for="file" class="form-label">Progress</label>
                 <progress id="file" value="25" max="100" class="progress-bar"> 25% </progress><br><br><br>
                 <form action="home.html" method="GET">
-                  <label for="name" class="form-label">FirstName*</label>
-                  <input id="name" name="name" type="text" required title="Your first name">
-                  <label for="name" class="form-label">LastName*</label>
-                  <input id="name" name="name" type="text" required><br><br><br>
-                  <label for="nationality" class="form-label">Country*</label>
-                  <select name="nationality" id="nationality">
-                    <option value="USA">select a country</option>
-                    <option value="Danish">Danmark</option>
-                    <option value="Ukrainian">India</option>
-                    <option value="USA">Germany</option>
-                    <option value="USA">Norway</option>
-                    <option value="USA">Swedan</option>
-                    <option value="USA">USA</option>
-                  </select><br><br><br>
-                  <label for="name" class="form-label">Street Address*</label>
-                  <input id="name" name="name" type="text" required>
-                  <label for="name" class="form-label">Post Code*</label>
-                  <input id="name" name="name" type="text" required><br><br><br><br>
-                  <label for="name" class="form-label profile-description">Profile Description*
-                    (please provide a short descriprion of yourself to be displayed on our social community pages)
+                  <div class="last-name-property">
+                    <label for="name" class="form-label" >FirstName*</label>
+                    <input id="name" name="name" type="text" required title="Your first name" placeholder="First Name">
+                    <label for="name" class="form-label">LastName*</label>
+                    <input id="name" name="name" type="text" required required title="Your last name" placeholder="Last Name">
+                  </div>
+                  <div class="last-name-property">
+                    <label for="nationality" class="form-label">Country*</label>
+                    <select name="nationality" id="nationality" class="dropdown-list-properties">
+                      <option value="USA">select a country</option>
+                      <option value="Danish">Danmark</option>
+                      <option value="Ukrainian">India</option>
+                      <option value="USA">Germany</option>
+                      <option value="USA">Norway</option>
+                      <option value="USA">Swedan</option>
+                      <option value="USA">USA</option>
+                    </select>
+                  </div>
+                  <div class="last-name-property">
+                    <label for="name" class="form-label" >Street Address*</label>
+                    <input id="name" name="name" type="text" required title="Your address like house numebr, street, and city" placeholder="no,street,city">
+                    <label for="name" class="form-label">Post Code*</label>
+                    <input id="name" name="name" type="text" required pattern="[1-9][0-9][0-9][0-9]" placeholder="fx.2200" title="four digit number"><br><br><br><br>
+                  </div>
+                  <label for="name" class="form-label profile-description">Profile Description
                   </label>
+                  <p>(please provide a short descriprion of yourself to be displayed on our social community pages)</p>
                   <textarea id="textarea" rows="6" cols="50"></textarea>
                   <p> 
                     Use same address for billing and shipping? Uncheck below to fill out a seperate shipping address
                   </p>
                   <label for="address" class="form-label"> Shipping Address</label>
                   <input type="checkbox" id="address" name="address1" value="address2"><br><br><br>
-                  <div class="control-me">
+                  <div class="control-me last-name-property">
                     <label for="name" class="form-label">Street Address*</label>
-                    <input id="name" name="name" type="text" required>
+                    <input id="name" name="name" type="text" required title="Your address like house numebr, street, and city" placeholder="no,street,city">
                     <label for="name" class="form-label">Post Code*</label>
-                    <input id="name" name="name" type="text" required>
+                    <input id="name" name="name" type="text" required >
                   </div>
                   <label type="button" class="button-nextstep" for="tab-2">Next Step </label>
                 </form>
@@ -141,18 +147,18 @@
                     <label class="form-label">Handbags</label>
                     <input type="checkbox">
                     <div class="grid-container">
-                      <img src="images/image1.jpg" class="grid-item" alt="image1">
-                      <img src="images/image2.jpg" class="grid-item" alt="image2">
-                      <img src="images/image3.jpg" class="grid-item" alt="image3">
-                      <img src="images/image4.jpg" class="grid-item" alt="image4">
+                      <img src="images/image1.jpg" class="grid-item grid-item-image" alt="image1">
+                      <img src="images/image2.jpg" class="grid-item grid-item-image" alt="image2">
+                      <img src="images/image3.jpg" class="grid-item grid-item-image" alt="image3">
+                      <img src="images/image4.jpg" class="grid-item grid-item-image" alt="image4">
                       <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
                       <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
                       <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
                       <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
-                      <img src="images/image5.jpg" class="grid-item" alt="image5">
-                      <img src="images/image6.jpg" class="grid-item" alt="image6">  
-                      <img src="images/image7.jpg" class="grid-item" alt="image7">
-                      <img src="images/image8.jpg" class="grid-item" alt="image8">
+                      <img src="images/image5.jpg" class="grid-item grid-item-image" alt="image5">
+                      <img src="images/image6.jpg" class="grid-item grid-item-image" alt="image6">  
+                      <img src="images/image7.jpg" class="grid-item grid-item-image" alt="image7">
+                      <img src="images/image8.jpg" class="grid-item grid-item-image" alt="image8">
                       <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
                       <input type="checkbox" id="address" name="address1" value="address2" class="grid-item checkbox-under-grid-item">
                       <input type="checkbox" id="address" name="address1" value="address2"class="grid-item checkbox-under-grid-item">
