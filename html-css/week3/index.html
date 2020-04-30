@@ -23,8 +23,8 @@
     <section>
         <div class="tabs">
             <div class="tab">
-              <input type="radio" id="tab-1" name="tab-group-1" checked>
-              <label for="tab-1">Shipping Details</label>
+              <input type="radio" id="tab-1" name="tab-group-1" class="hide-in-mobile-view" checked>
+              <label for="tab-1" class="hide-in-mobile-view">Shipping Details</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                 <p>
@@ -44,13 +44,13 @@
                 <label for="file" class="form-label">Progress</label>
                 <progress id="file" value="25" max="100" class="progress-bar"> 25% </progress><br><br><br>
                 <form action="home.html" method="GET">
-                  <div class="last-name-property">
+                  <div class="coloumn-in-mibile-view">
                     <label for="name" class="form-label" >FirstName*</label>
                     <input id="name" name="name" type="text" required title="Your first name" placeholder="First Name">
                     <label for="name" class="form-label">LastName*</label>
                     <input id="name" name="name" type="text" required required title="Your last name" placeholder="Last Name">
                   </div>
-                  <div class="last-name-property">
+                  <div class="coloumn-in-mibile-view">
                     <label for="nationality" class="form-label">Country*</label>
                     <select name="nationality" id="nationality" class="dropdown-list-properties">
                       <option value="USA">select a country</option>
@@ -62,7 +62,7 @@
                       <option value="USA">USA</option>
                     </select>
                   </div>
-                  <div class="last-name-property">
+                  <div class="coloumn-in-mibile-view">
                     <label for="name" class="form-label" >Street Address*</label>
                     <input id="name" name="name" type="text" required title="Your address like house numebr, street, and city" placeholder="no,street,city">
                     <label for="name" class="form-label">Post Code*</label>
@@ -77,7 +77,7 @@
                   </p>
                   <label for="address" class="form-label"> Shipping Address</label>
                   <input type="checkbox" id="address" name="address1" value="address2"><br><br><br>
-                  <div class="control-me last-name-property">
+                  <div class="control-me coloumn-in-mibile-view">
                     <label for="name" class="form-label">Street Address*</label>
                     <input id="name" name="name" type="text" required title="Your address like house numebr, street, and city" placeholder="no,street,city">
                     <label for="name" class="form-label">Post Code*</label>
@@ -89,7 +89,7 @@
             </div>
             <div class="tab">
               <input type="radio" id="tab-2" name="tab-group-1">
-              <label for="tab-2">Register</label>
+              <label for="tab-2" class="hide-in-mobile-view">Register</label>
               <div class="content">
                 <div>
                   <h1>Sign up to yourcustomtailor.com</h1>
@@ -101,14 +101,18 @@
                     We will probably need to stay in touch somehow. Let us know how can we reach you?
                   </p>
                   <form action="home.html" method="get">
-                    <label for="name" class="form-label">Email*</label>
-                    <input id="name" name="name" type="text" required>
-                    <label for="name" class="form-label">phone*</label>
-                    <input id="name" name="name" type="text" required><br><br><br>
-                    <label for="name" class="form-label">password*</label>
-                    <input id="pwd" name="pwd" type="password"><br><br><br> 
-                    <label for="name" class="form-label">Re-enter password*</label>
-                    <input id="pwd" name="pwd" type="password">
+                    <diV class="coloumn-in-mibile-view">
+                      <label for="name" class="form-label">Email*</label>
+                      <input id="name" name="name" type="text" required>
+                      <label for="name" class="form-label">phone*</label>
+                      <input id="name" name="name" type="text" required><br><br><br>
+                    </diV>
+                    <div class="coloumn-in-mibile-view">
+                      <label for="name" class="form-label">password*</label>
+                      <input id="pwd" name="pwd" type="password"><br><br><br> 
+                      <label for="name" class="form-label">Re-enter password*</label>
+                      <input id="pwd" name="pwd" type="password">
+                    </div>
                     <p>I want to signup for news letter</p>
                     <label for="checkbox" class="form-label"> Weekly news</label>
                     <input type="checkbox" id="checkbox" name="cb1" value="cb2">
@@ -125,7 +129,7 @@
             </div>
             <div class="tab">
               <input type="radio" id="tab-3" name="tab-group-1">
-              <label for="tab-3">Select Items</label>
+              <label for="tab-3" class="hide-in-mobile-view">Select Items</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                   <h2>Step:3/4-tell us who you are?</h2>
@@ -172,7 +176,7 @@
             </div>
             <div class="tab">
               <input type="radio" id="tab-4" name="tab-group-1">
-              <label for="tab-4">Payments</label>
+              <label for="tab-4" class="hide-in-mobile-view">Payments</label>
               <div class="content">
                 <h1>Sign up to yourcustomtailor.com</h1>
                   <h2>Step:4/4-Payment</h2>
