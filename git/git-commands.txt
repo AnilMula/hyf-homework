@@ -1,4 +1,4 @@
-
++*
 git clone
 git init
 git add <file-name>
@@ -9,3 +9,4 @@ Branches
 git branch branch-name
 git checkout branch-name
 git push origin branch-name
+git push origin --delete test(to delete a remote branch)
