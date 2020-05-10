@@ -1,0 +1,16 @@
+html,body{
+    margin: 2rem;
+    padding: 2rem;
+    color: blue;
+}
+input{
+    border-radius: 0.9rem;
+    margin: 2rem;
+    height: 1.4rem;
+    background-color: aliceblue;    
+}
+div{
+    padding: 3rem   ;
+    border: 5px solid peru;
+    background-color: papayawhip;
+}
