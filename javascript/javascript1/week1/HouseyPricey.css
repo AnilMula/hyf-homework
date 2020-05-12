@@ -1,0 +1,23 @@
+html,body{
+    margin: 2vw;
+    padding: 2vw;
+    color: blue;
+}
+input{
+    border-radius: 0.9rem;
+    margin: 2rem;
+    height: 1.4rem;
+    background-color: aliceblue;    
+}
+div.peter{
+    float: left;
+    padding: 3vw;
+    border: 5px solid peru;
+    background-color: papayawhip;
+}
+div.Julia{
+    float: right;
+    padding: 3rem   ;
+    border: 5px solid peru;
+    background-color: papayawhip;
+}
