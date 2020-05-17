@@ -1,19 +1,16 @@
 
-    var dogYearOfBirth = 1980;
-    var dogYearFuture = 2022;
-    var dogYear = dogYearFuture - dogYearOfBirth;
+    const dogYearOfBirth = 1980;
+    const dogYearFuture = 2022;
+    const dogYear = dogYearFuture - dogYearOfBirth;
     /* 
     0 for dog years
     1 for human years */
-    var shouldShowResultInDogYears = 1; 
+    const shouldShowResultInDogYears = true; 
     
-    if(shouldShowResultInDogYears == 0){
+    if(shouldShowResultInDogYears){
     console.log(" Your dog will be " + dogYear/10 + " human years old in " + dogYearFuture);
     }
-    else if(shouldShowResultInDogYears == 1){
+    else {
     console.log(" Your dog will be " + dogYear + " years old in " + dogYearFuture);    
-    }
-    else{
-    console("please enter either 0 or 1 in Dog Age")
     }
   
