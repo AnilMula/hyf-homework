@@ -5,17 +5,17 @@ The garden size is 70m2. This house costs 1.000.000.
 
 Figure out if Peter and Julia are paying too much or too little using Javascript and the formula specified above. */
 
-var wideInMetersPeter = 8;
-var deepInMetersPeter = 10;
-var heighInMetersPeter = 10;
-var gardenSizeInM2Peter = 100;
-var housePricePeter = wideInMetersPeter * deepInMetersPeter * heighInMetersPeter * 2.5 * 1000 + gardenSizeInM2Peter * 300;
+const wideInMetersPeter = 8;
+const deepInMetersPeter = 10;
+const heighInMetersPeter = 10;
+const gardenSizeInM2Peter = 100;
+const housePricePeter = wideInMetersPeter * deepInMetersPeter * heighInMetersPeter * 2.5 * 1000 + gardenSizeInM2Peter * 300;
 
-var wideInMetersJulia = 5;
-var deepInMetersJulia = 11;
-var heighInMetersJulia = 8;
-var gardenSizeInM2Julia = 70;
-var housePriceJulia = wideInMetersJulia * deepInMetersJulia * heighInMetersJulia * 2.5 * 1000 + gardenSizeInM2Julia * 300;
+const wideInMetersJulia = 5;
+const deepInMetersJulia = 11;
+const heighInMetersJulia = 8;
+const gardenSizeInM2Julia = 70;
+const housePriceJulia = wideInMetersJulia * deepInMetersJulia * heighInMetersJulia * 2.5 * 1000 + gardenSizeInM2Julia * 300;
 
 
 if(housePricePeter < 2500000) {
