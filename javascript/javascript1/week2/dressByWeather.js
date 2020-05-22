@@ -13,9 +13,6 @@ function dressByWeather(temperature){
         // for temperatures above 10 and below 15 degrees centigrades
         return [ "Shirts", "Hoodies", "Leather jackets"];
     }
-    else
-        // for temperatures above 16 degrees centigrades
-        return "regular clothes"
 }
 const clothesToWear1 = dressByWeather(18);
 console.log(clothesToWear1);
