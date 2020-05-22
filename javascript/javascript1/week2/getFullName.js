@@ -1,10 +1,8 @@
-function getFullName(firstname, surname, useFormalName){
-    if(useFormalName == false){
+function getFullName(firstname, surname, useFormalName = false){
+    if(!useFormalName){
         return firstname + " " + surname;
     }
-    else{
-        return  "lord " + firstname + " " + surname;
-    }
+    return  "lord " + firstname + " " + surname;  
 }
 
 const fullname1 = getFullName("Anil","Mula",false);
