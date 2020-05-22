@@ -1,4 +1,13 @@
 let class07Students = []; // it is an empty array for a class that holds max 6 students
+function addStudent(student){
+    // this is a inner function to add a student to the class
+    class07Students.push(student);
+}
+function removeStudent(){
+    /* this is a inner function to remove a student when the class is full
+    and queen needs to be added */ 
+    class07Students.pop();
+}
 function addStudentToClass(studentName) {
     /* the function takes a student name and adds to a class with the following conditions
     1.There can be only 6 students in a class. 
@@ -10,15 +19,7 @@ function addStudentToClass(studentName) {
     3.We are very fond of our Queen in Denmark, 
       so if the Queen is added to the class she should always get a space. Even if the class has been filled out.
     4.You cannot add an empty string to a class */
-    function addStudent(student){
-        // this is a inner function to add a student to the class
-        class07Students.push(student);
-    }
-    function removeStudent(){
-        /* this is a inner function to remove a student when the class is full
-        and queen needs to be added */ 
-        class07Students.pop();
-    }
+    
     if(studentName == "Queen"){
         // if the student is a queen she must have a place in the class
         // first check if the queen is already in the class
