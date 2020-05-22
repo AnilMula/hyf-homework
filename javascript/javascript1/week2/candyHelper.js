@@ -1,5 +1,5 @@
 let boughtCandyPrices = [];
-let candyTablePrices = [ ['Sweet', 0.5] ,[ 'Chocolate', 0.7], [ 'Toffee', 1.1],[ 'Chewing-gum',0.03]];
+const candyTablePrices = [ ['Sweet', 0.5] ,[ 'Chocolate', 0.7], [ 'Toffee', 1.1],[ 'Chewing-gum',0.03]];
 let amountToSpend = Math.random() * 100;
 //let amountRemaining = amountToSpend; // initially amount remaing is amount to spend
 let spentMoney = 0;
@@ -9,7 +9,7 @@ function addCandy(candyType, weight){
     let costOfCandy;
     for(let i = 0; i < candyTablePrices.length; i++){
         // iterate through candy prices table to calculate price of a candy
-        if(candyTablePrices[i][0] == candyType){
+        if(candyTablePrices[i][0] === candyType){
             costOfCandy = weight * candyTablePrices[i][1];// cost = weight * price per gram
             // check if we have enough money to by the candy
             if(amountToSpend > costOfCandy){
