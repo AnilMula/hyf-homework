@@ -7,5 +7,5 @@ function getEventWeekday(){
     let today = d.getDay(); // getday() method returns a number 0=sunday...6=saturday
     today += document.getElementById("numdays").value;
     
-    document.getElementById("weekday").innerHTML = "The event is on "+days[today%7];  //return a weekday that is number of days from today 
+    document.getElementById("weekday").innerHTML = "today is "+today+" The event is on "+days[today%7];  //return a weekday that is number of days from today 
 }
