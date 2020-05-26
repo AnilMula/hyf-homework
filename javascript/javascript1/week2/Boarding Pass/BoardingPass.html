@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boarding Pass Generator</title>
+    <link rel="stylesheet" type="text/css" href="BoardingPass.css">
+    <script src="BoardingPass.js">
+    </script>   
+</head>
+<body>
+    <h1>
+        Book your flight here
+    </h1>
+    <h2>
+        We promise not to steal all your money!
+    </h2>
+    <div>
+        <label for="firstname">Write your firstname</label>
+        <input type=text id="firstname" placeholder="firstname" class="firstname">
+    </div>
+    <div>
+        <label for="lastname">Write your lastname</label>
+        <input type=text id="lastname" placeholder="lastname" class="lastname">
+    </div>
+    <div class="formal-name">
+        <label>Use Formal Name</label>
+        <input type="checkbox" id="formalname"> 
+    </div>
+    <button class="boarding-card-button" onclick="getBoardingCard()">Get Boarding Card</button>
+    <div id="boardingcard-hidden">
+        <h2>
+            Boardingcard
+        </h2>
+        <h3>
+            Flight from Copenhagen - London
+        </h3>
+        <h4>
+            Fullname:
+        </h4>
+        <h5 id ="Fullname">
+            
+        </h5>
+      </div>
+    <div>
+        <!-- #address:checked  ~ .control-me{
+            display: none;
+          }using checkbox hack to dispaly and hide
+        <input type="checkbox" id="address">
+​
+            <div class="control-me"> -->
+    </div>
+</body>
+</html>
