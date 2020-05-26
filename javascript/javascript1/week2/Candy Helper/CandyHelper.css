@@ -1,0 +1,93 @@
+html,
+body {
+  margin: 2vw;
+  padding: 2vw;
+}
+h1,
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+input.total-amount,
+input.weight {
+  border-color: #d2d6d9;
+  display: block;
+  width: 20%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  padding: 8px;
+  line-height: 1.42857143;
+  color: #2e2e2e;
+  background-color: #fff;
+  border: 1px solid #d2d6d9;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+input.weight {
+  border-color: #d2d6d9;
+  display: block;
+  width: 10%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 22px;
+  padding: 8px;
+  line-height: 1.42857143;
+  color: #2e2e2e;
+  background-color: #fff;
+  border: 1px solid #d2d6d9;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+select {
+  border-color: #d2d6d9;
+  display: inline;
+  width: 15%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  padding: 8px;
+  line-height: 1.42857143;
+  color: #2e2e2e;
+  background-color: #fff;
+  border: 1px solid #d2d6d9;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.select-container {
+  display: flex;
+  flex-direction: column;
+  border: groove 2px #c1d6af;
+  padding: 3rem;
+  background-color: honeydew;
+}
+.buy-button {
+  box-shadow: inset 0px 1px 0px 0px #a2ba8e;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background: #3ecf8e;
+  border-radius: 11px;
+  align-self: flex-end;
+  border: 2px solid #268a16;
+  display: inline-block;
+  cursor: pointer;
+  color: #0a0f06;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 18px 65px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #aade7c;
+}
+.buy-button:hover {
+  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+  background-color: #5cb811;
+}
+.buy-button:active {
+  position: relative;
+  top: 1px;
+}
