@@ -66,6 +66,13 @@ select {
   padding: 3rem;
   background-color: honeydew;
 }
+.output-container {
+  display: flex;
+  flex-direction: row;
+  border: groove 2px #c1d6af;
+  padding: 3rem;
+  background-color: honeydew;
+}
 .buy-button {
   box-shadow: inset 0px 1px 0px 0px #a2ba8e;
   background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);

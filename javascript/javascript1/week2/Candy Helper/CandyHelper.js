@@ -16,6 +16,7 @@ function buyCandy() {
     document.getElementById("output").innerHTML =
       '"You can buy more, so please do!"';
     addCandy(candyType, weight);
+    document.getElementById("output1").innerHTML = boughtCandyPrices;
   } else {
     document.getElementById("output").innerHTML = "Enough candy for you!";
   }
