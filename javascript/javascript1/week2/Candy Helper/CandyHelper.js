@@ -1,4 +1,4 @@
-function buyCandy() {
+function initialize() {
   amountToSpend = parseInt(document.getElementById("total-amount").value);
   boughtCandyPrices = [];
   candyTablePrices = [
@@ -8,15 +8,21 @@ function buyCandy() {
     ["Chewing-gum", 0.03],
   ];
   costOfCandy = 0;
+}
 
-  let candyType = document.getElementById("candy").value;
-  let weight = parseInt(document.getElementById("weight").value);
+function buyCandy() {
+  if (amountToSpend) {
+    let candyType = document.getElementById("candy").value;
+    let weight = parseInt(document.getElementById("weight").value);
 
-  if (canBuyMoreCandy(candyType, weight)) {
-    document.getElementById("output").innerHTML =
-      '"You can buy more, so please do!"';
-    addCandy(candyType, weight);
-    document.getElementById("output1").innerHTML = boughtCandyPrices;
+    if (canBuyMoreCandy(candyType, weight)) {
+      document.getElementById("output").innerHTML =
+        '"You can buy more, so please do!"';
+      addCandy(candyType, weight);
+      document.getElementById("output1").innerHTML = boughtCandyPrices;
+    } else {
+      document.getElementById("output").innerHTML = "Enough candy for you!";
+    }
   } else {
     document.getElementById("output").innerHTML = "Enough candy for you!";
   }
@@ -34,7 +40,7 @@ function canBuyMoreCandy(candyType, weight) {
     if (candyTablePrices[i][0] === candyType) {
       costOfCandy = weight * candyTablePrices[i][1]; // cost = weight * price per gram
       // check if we have enough money to by the candy
-      if (amountToSpend > costOfCandy) {
+      if (amountToSpend >= costOfCandy) {
         // now we have enough money to buy the candy
         return true;
       } else {
@@ -43,3 +49,4 @@ function canBuyMoreCandy(candyType, weight) {
     }
   }
 }
+document.getElementById("buyButton").addEventListener("click", buyCandy);

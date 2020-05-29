@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candy Helper</title>
     <link rel="stylesheet" type="text/css" href="CandyHelper.css" />
-    <script src="CandyHelper.js"></script>
+    
   </head>
   <body>
     <h1>
@@ -20,6 +20,7 @@
         placeholder="amount in hand"
         class="total-amount"
         min="1"
+        onchange="initialize()"
       />
     </div>
     <div class="select-container">
@@ -38,12 +39,15 @@
         class="weight"
         min="0"
       />
-      <button class="buy-button" onclick="buyCandy()">GUY CANDY</button>
+      <button class="buy-button" id="buyButton">GUY CANDY</button>
     </div>
     <div class="output-container">
       <div>Bought Candy Details<div>
       <div id="output"></div>
       <div id="output1"></div>
     </div>
+    <script src="CandyHelper.js">
+      
+    </script>
   </body>
 </html>
