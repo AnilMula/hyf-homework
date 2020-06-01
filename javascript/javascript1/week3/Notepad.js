@@ -14,7 +14,7 @@ function getNote(id) {
     if (notes[i].id === id)
       return "content is '" + notes[i].content + "' for the id " + notes[i].id;
   }
-  return "content can not found for id " + id;
+  console.log("content can not found for);
 }
 function logOutNotesFormatted() {
   // your code here
@@ -33,7 +33,7 @@ function endedNote(id) {
   // the function takes id a parameter as parameter
   // it removes content and id from the notes array
   // and it updates notes array by changing ids for the rest of objects
-  if (id == null || isNaN(id) || id > notes.length) {
+  if (id == null || id > notes.length) {
     return "pass valid id as an argument";
   }
   for (let i = 0; i <= notes.length; i++) {
