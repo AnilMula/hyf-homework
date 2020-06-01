@@ -24,7 +24,7 @@ function logOutSeriesText(tvSeriesDurations) {
   duration of the series */
   // it is assumed that average life of a  person is 80 years(42048000 minutes per 80 years)
   // the function returns the percentage of a persons life been watching series on tv
-  let seriesTimeInMinutesPerWeek;
+  //let seriesTimeInMinutesPerWeek;
   let seriesTimeInMinutesPer80Years;
   let seriesTimePercentIN80Years;
   //Variables for all the tvseries
@@ -34,11 +34,15 @@ function logOutSeriesText(tvSeriesDurations) {
   // first iterate on tvSeriesDurations object to take time per week of each series`
   for (let i = 0; i < tvSeriesDurations.length; i++) {
     // First calculate series duration in minutes per week days*hours*60+minutes
-    seriesTimeInMinutesPerWeek =
+    /* seriesTimeInMinutesPerWeek =
       tvSeriesDurations[i].days * tvSeriesDurations[i].hours * 60 +
-      tvSeriesDurations[i].minutes;
+      tvSeriesDurations[i].minutes; */
     // Next calculate series duration in minutes per 80 years above value*53weeks*80 years
-    seriesTimeInMinutesPer80Years = seriesTimeInMinutesPerWeek * 53 * 80;
+    seriesTimeInMinutesPer80Years =
+      (tvSeriesDurations[i].days * tvSeriesDurations[i].hours * 60 +
+        tvSeriesDurations[i].minutes) *
+      53 *
+      80;
     // Next calculate series time percent in 80 years
     seriesTimePercentIN80Years = (
       seriesTimeInMinutesPer80Years / 42048000
