@@ -39,12 +39,12 @@ function usageLimit(activitiesObject) {
       return "You have reached your limit, no more smartphoning for you!";
   }
 }
-function spentMostTimeOn(activitiesObject) {
+function spentMostTimeOn(activities) {
   // the function will return the activity that was spent most time on
-  let mostTimeActivity = activitiesObject[0]; // it is an object that stores activity that is spent most time
-  for (let i = 0; i < activitiesObject.length; i++) {
-    if (activitiesObject[i].duration > mostTimeActivity.duration)
-      mostTimeActivity = activitiesObject[i];
+  let mostTimeActivity = activities[0]; // it is an object that stores activity that is spent most time
+  for (let i = 0; i < activities.length; i++) {
+    if (activities[i].duration > mostTimeActivity.duration)
+      mostTimeActivity = activities[i];
   }
   return (
     "Most time spent on " +
