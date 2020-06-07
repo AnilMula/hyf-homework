@@ -31,7 +31,7 @@ function getReply(inputString) {
   // the following code is to remove from "todo list"
   if (inputString.search("Remove") == 0) {
     let activity = inputString.substring(7, inputString.search("from my todo"));
-    todo.pop(activity);
+    todo.splice(activity, 1);
     return "Removed " + activity + "from your todo";
   }
 
@@ -133,6 +133,7 @@ console.log(getReply("Add dressup to my todo"));
 console.log(getReply("Add breakfast to my todo"));
 console.log(getReply("What is on my todo?")); // will display all the activities
 console.log(getReply("Remove fishing from my todo")); //Removed fishing from your todo
+console.log(getReply("What is on my todo?")); // will display all the activities
 console.log(getReply("What day is it today?")); //30. of August 2019
 console.log(getReply("what is 13 + 2")); // we can use + - *
 getReply("Set a timer for 2 minute");
