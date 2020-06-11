@@ -7,7 +7,7 @@ output.style.color = "green";
 body.appendChild(output);
 
 function getSpiritAnimalName() {
-  const x = document.getElementById("name").value;
+  const name = document.getElementById("name").value;
   const spiritAnimalNames = [
     "Alligator",
     "Ant",
@@ -22,9 +22,9 @@ function getSpiritAnimalName() {
     "Butterfly",
     "Cardinal",
   ];
-  if (x.length > 0) {
+  if (name.length > 0) {
     output.innerHTML =
-      x + "-" + spiritAnimalNames[Math.ceil(Math.random() * 10)];
+      name + "-" + spiritAnimalNames[Math.ceil(Math.random() * 10)];
   } else {
     output.innerHTML = ""; // this is needed to remove previous string when input is clear
   }
