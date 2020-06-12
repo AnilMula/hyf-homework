@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log("Script loaded");
 
 const products = getAvailableProducts();
@@ -52,3 +53,24 @@ function renderProducts(products) {
 }
 
 renderProducts(products);
+=======
+console.log("Script loaded");
+
+const products = getAvailableProducts();
+
+function renderProducts(products) {
+  // your code here
+  const main = document.querySelector("main");
+  const newul = document.createElement("ul");
+  main.appendChild(newul);
+
+  const ul = document.querySelector("ul");
+  products.forEach((product) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<h2>${product.name}</h2><span>price: ${product.price}</span><br><span>Rating: ${product.rating}</span>`;
+    ul.appendChild(li);
+  });
+}
+
+renderProducts(products);
+>>>>>>> f0afc11bedda60623ea91e876c2f6479c0231c61
