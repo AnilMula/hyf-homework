@@ -8,15 +8,19 @@ notThisFunctionName(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1} *
 const danishString = ["Jeg har en blå bil"];
 const danishString2 = ["Blå grød med rød bær"];
 
+// this will remove all the spaces in the string
+const newDanishString = danishString[0].split(/\s/).join(""); //Jegharenblåbil
+const newDanishString2 = danishString2[0].split(/\s/).join(""); //Blågrødmedrødbær
+
 function countOfDanishLetters(listOfWords) {
   // danish letters æ å ø
   let æCount = 0;
   let åCount = 0;
   let øCount = 0;
-  for (let i = 0; i < listOfWords[0].length; i++) {
-    if (listOfWords[0][i] === "æ" || listOfWords[0][i] === "Æ") æCount++;
-    else if (listOfWords[0][i] === "å" || listOfWords[0][i] === "Å") åCount++;
-    else if (listOfWords[0][i] === "ø" || listOfWords[0][i] === "Ø") øCount++;
+  for (let i = 0; i < listOfWords.length; i++) {
+    if (listOfWords[i] === "æ" || listOfWords[i] === "Æ") æCount++;
+    else if (listOfWords[i] === "å" || listOfWords[i] === "Å") åCount++;
+    else if (listOfWords[i] === "ø" || listOfWords[i] === "Ø") øCount++;
   }
   let totalLetters = æCount + åCount + øCount;
   console.log(
@@ -31,6 +35,6 @@ function countOfDanishLetters(listOfWords) {
   );
 }
 
-countOfDanishLetters(danishString); // returns {total: 1, å: 1}
+countOfDanishLetters(newDanishString); // returns {total: 1, å: 1}
 
-countOfDanishLetters(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
+countOfDanishLetters(newDanishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
