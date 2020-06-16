@@ -44583,10 +44583,84 @@ const movies = [
     running_times: 5580,
   },
 ];
+//1.array of movies containing the movies with a short title
+// shortest title = single character
 console.log(movies.filter((movie) => movie.title.length == 1));
 
+//2.array of movie titles with long movie titles
+// long movie title = 70 characters and more
 console.log(movies.filter((movie) => movie.title.length > 70));
 
+//3.number of movies made between 1980-1989 (including both the years)
 console.log(
-  movies.filter((movie) => movie.year >= 1980 && movie.year <= 1989).length
+  "number of movies between 1980 and 1989 : " +
+    movies.filter((movie) => movie.year >= 1980 && movie.year <= 1989).length
+);
+/* //4.Create a new array that has an extra key called tag. 
+The tag is based on the rating: 
+Good (>= 7), Average (>= 4 and < 7), Bad (< 4) */
+movies.forEach((movie) => {
+  if (movie.rating >= 7) movie.tag = "Good";
+  else if (movie.rating < 7 && movie.rating >= 4) movie.tag = "Average";
+  else movie.tag = "Bad";
+});
+console.log(movies[100]); //check sample output
+console.log(movies[1000]);
+
+/* 5
+Using chaining, first filter the movies array to only contain the movies rated higher than 6. 
+Now map the movies array to only the rating of the movies. */
+const movieRatingsAbove6 = movies
+  .filter((movie) => movie.rating > 6)
+  .map((movie) => movie.rating);
+
+//console.log(movieRatingsAbove6.length); // total number of movies with rating > 6
+
+/* 6. Count the total number of movies containing any of following keywords: 
+Surfer, Alien or Benjamin. So if there were 3 movies that contained Surfer,
+ 1 with Alien and 2 with Benjamin, you would return 6. 
+ Can you make sure the search is case insensitive? */
+// regular expression to check three words in string /hello|hi|howdy/.test(str)
+
+console.log(
+  "Total number of movies with surfer,alien,benjamin are:" +
+    movies
+      .filter((movie) =>
+        /surfer|alien|benjamin/.test(movie.title.toLowerCase())
+      )
+      .map((movie) => movie.title).length
+);
+
+/* 7. Create an array of movies where a word in the title is duplicated.
+  Fx "Star Wars: The Clone Wars" the word Wars is duplicated.
+   Here are some madeup examples of movies with duplicated words in the title: 
+   "The three men and the pistol", "Chase three - The final chase"
+ */
+const duplicateMovieTitles = movies
+  .filter((movie) => movie.title.match(/\b(\w+)\b.*\b\1\b/g) !== null)
+  .map((movie) => movie.title);
+
+//8. Calculate the average rating of all the movies using reduce.
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(
+  "Average rating of " +
+    movies.length +
+    " movies is: " +
+    (
+      movies.map((movie) => movie.rating).reduce(reducer) / movies.length
+    ).toFixed(2)
+);
+/* 9
+Count the total number of Good, Average and Bad movies using reduce. 
+A return could be {goodMovies: 33, averageMovies: 45, goodMovies: 123} */
+const movieTagsArray = movies.map((movie) => movie.tag);
+console.log(
+  "Good movies:" + movieTagsArray.map((tag) => tag == "Good").reduce(reducer)
+);
+console.log(
+  "Average movies:" +
+    movieTagsArray.map((tag) => tag == "Average").reduce(reducer)
+);
+console.log(
+  "Bad movies:" + movieTagsArray.map((tag) => tag == "Bad").reduce(reducer)
 );
