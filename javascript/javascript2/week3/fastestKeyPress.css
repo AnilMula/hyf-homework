@@ -1,0 +1,21 @@
+div.player-window {
+  width: 50%;
+  background-color: #ffcc33;
+  margin: auto;
+}
+.player1 {
+  width: 49%;
+  float: left;
+  height: 300px;
+  font-size: 2vw;
+  text-align: center;
+  background-color: cornsilk;
+}
+.player2 {
+  width: 49%;
+  float: left;
+  height: 300px;
+  font-size: 2vw;
+  text-align: center;
+  background-color: lightsteelblue;
+}
