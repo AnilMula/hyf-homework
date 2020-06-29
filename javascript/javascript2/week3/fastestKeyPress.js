@@ -44,29 +44,24 @@ function startGame() {
         player1.innerHTML = `wins`;
         player2.innerHTML = ``;
 
-        //when game over clear both counters and remove key listener
-        player1ClickCount = 0;
-        player2ClickCount = 0;
-        document.removeEventListener("keypress", keyPresscount);
+        resetGame();
       } else if (player2ClickCount > player1ClickCount) {
         // if player 2 press count is more is wins and game over
         player1.innerHTML = ``;
         player2.innerHTML = `wins`;
-
-        //when game over clear both counters and remove key listener
-        player1ClickCount = 0;
-        player2ClickCount = 0;
-        document.removeEventListener("keypress", keyPresscount);
+        resetGame();
       } else {
         // if both players have same press count game is tie and game over
         player1.innerHTML = `draw`;
         player2.innerHTML = `draw`;
-
-        //when game over clear both counters and remove key listener
-        player1ClickCount = 0;
-        player2ClickCount = 0;
-        document.removeEventListener("keypress", keyPresscount);
+        resetGame();
       }
     }, totalNumbeOfSeconds * 1000);
   }
+}
+function resetGame() {
+  //when game over clear both counters and remove key listener
+  player1ClickCount = 0;
+  player2ClickCount = 0;
+  document.removeEventListener("keypress", keyPresscount);
 }

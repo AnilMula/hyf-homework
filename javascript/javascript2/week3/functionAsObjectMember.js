@@ -1,7 +1,7 @@
-const functionInObject = {
-  func: () => {
-    console.log("function declaration in object");
+const student = {
+  fullname: () => {
+    return "Anil Kumar Mula";
   },
 };
 
-functionInObject.func();
+console.log(student.fullname());
