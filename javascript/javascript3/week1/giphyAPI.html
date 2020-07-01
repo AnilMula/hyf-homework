@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giphy Application</title>
+    <link rel="stylesheet" href="giphyAPI.css" />
+  </head>
+  <body>
+    <div class="main-box" id="output">
+      <h1>Giphy Search</h1>
+      <input
+        type="text"
+        placeholder="enter search word"
+        value="happy"
+        id="search-word"
+        class="myInput"
+      />
+      <input
+        type="text"
+        placeholder="number of images"
+        value="3"
+        id="total-number"
+        class="myInput"
+      />
+      <button class="myButton">Get Images</button>
+      <h4>Search Result</h4>
+      <div id="image-box"></div>
+    </div>
+    <script src="giphyApp.js"></script>
+  </body>
+</html>
