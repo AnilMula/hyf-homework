@@ -1,10 +1,6 @@
 //http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5
 const key = "Jdx97xepx2rB2D7Avf4fbhOQiGActDYy";
 
-//grab the input field and its value
-const word = document.getElementById("search-word");
-const number = document.getElementById("total-number");
-
 //grab the div element to add output to
 const outputWindow = document.getElementById("image-box");
 
@@ -15,8 +11,8 @@ const displayImages = (element) => {
 };
 const search = () => {
   //get the input text and number
-  const searchWord = word.value;
-  const totalNumber = number.value;
+  const searchWord = document.getElementById("search-word").value;
+  const totalNumber = document.getElementById("total-number").value;
 
   //clear the previous output
   outputWindow.innerHTML = "";
