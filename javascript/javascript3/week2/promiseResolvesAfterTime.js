@@ -1,13 +1,13 @@
 let resolvePromiseAfter; //global variable for promise
-function createPromiseAfter(setTime) {
+function createPromiseAfter(resolveAfter) {
   //this function is used to create a promise that resolves after time: given in setTime
   resolvePromiseAfter = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(`promise resolved after ${setTime / 1000} seconds`);
-    }, setTime);
+      resolve(`promise resolved after ${resolveAfter / 1000} seconds`);
+    }, resolveAfter);
   });
 }
-createPromiseAfter(2000); //function call to crate a promise after 2sec
+createPromiseAfter(3000); //function call to crate a promise after 2sec
 
 //using promise way
 resolvePromiseAfter.then((data) => console.log("Promise Output: " + data));
