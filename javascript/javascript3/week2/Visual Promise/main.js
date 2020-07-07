@@ -1,8 +1,7 @@
-const targetPositions = [
-  { x: 20, y: 300 },
+/*   { x: 20, y: 300 },
   { x: 400, y: 300 },
   { x: 400, y: 20 },
-];
+ */
 
 function translateOneByOne() {
   moveElement(redBox, { x: 20, y: 300 }).then(() => {
