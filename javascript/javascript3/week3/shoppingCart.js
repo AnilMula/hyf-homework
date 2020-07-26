@@ -3,13 +3,12 @@ class Product {
     this.name = name;
     this.price = price;
   }
-  convertToCurrency(currency) {
+  async convertToCurrency(currency) {
     // https://api.exchangeratesapi.io/latest
-    fetch("https://api.exchangeratesapi.io/latest")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.rates.DKK);
-      });
+    const response = await fetch("https://api.exchangeratesapi.io/latest");
+    const data = await response.json();
+    //console.log(data.rates.DKK);
+    return data.rates.DKK;
   }
 }
 
@@ -127,4 +126,9 @@ const clickHandler = () => {
   button.removeEventListener("click", clickHandler);
 };
 button.addEventListener("click", clickHandler);
-new Product("switch", 10).convertToCurrency("DKK");
+
+//for currency converter
+
+new Product("switch", 10)
+  .convertToCurrency("DKK")
+  .then((data) => console.log(data));
