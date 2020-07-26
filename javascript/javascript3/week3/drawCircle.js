@@ -44,10 +44,22 @@ class Circle {
 //canvas width=1000 height=600
 
 //to get random (x,y) coordinates
-for (let x = 50; x <= 950; x = x + 50) {
-  for (let y = 50; y <= 550; y = y + 50) {
-    console.log(x, y);
-    let c1 = new Circle(x, y, 20, 0, 2 * Math.PI, "#000000");
-    c1.draw();
+let x = 50;
+let y = 50;
+const interval = setInterval(() => {
+  //for (let x = 50; x <= 950; x = x + 50) {
+  //for (let y = 50; y <= 550; y = y + 50) {
+
+  console.log(x, y);
+  let c1 = new Circle(x, y, 20, 0, 2 * Math.PI, "#000000");
+  c1.draw();
+  if (x == 250 && y == 150) {
+    clearInterval(interval);
+  } else if (x < 250) x = x + 50;
+  else if (x == 250) {
+    x = 50;
+    y = y + 50;
   }
-}
+  //}
+  // }
+}, 1000);
