@@ -159,11 +159,11 @@ select status.name, count(task.id) as "status-count" from task join status on ta
 	Done	12
 */
 -- 10. Get the names of all statuses, sorted by the status with most tasks first
-select status.name, count(task.id) as "status-count" from task join status on task.status_id=status.id group by status.id order by task.id;
+select status.name, count(task.id) as "status-count" from task join status on task.status_id=status.id group by status.id order by task.id asc;
 -- OUTPUT: 
 /*
 	name	status-count
-	Not started	8
 	In progress	15
 	Done	12
+	Not started	8
 */
