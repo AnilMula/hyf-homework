@@ -17,7 +17,7 @@ where user.name = 'Donald Duck' and status.id = 1;
 select title, created 
 from task
 inner join user on task.user_id = user.id
-where user.name = 'Maryrose Meadows' and task.created like '%-09-%';
+where user.name = 'Maryrose Meadows' and month(created)=09;
 
 -- Find how many tasks where created in each month, e.g. how many tasks were created in october, how many tasks were created in november, etc. (hint: use group by)
  
