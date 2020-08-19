@@ -54,6 +54,11 @@ delete from review where id = 2;
 select title,price from meal where price < 60;
 
 -- 2. Get meals that still has available reservations
+select meal.id,meal.title,sum(reservation.number_of_guests) as reserved
+from meal
+join reservation 
+on meal.id = reservation.meal_id
+group by meal.title;
 
 -- 3. Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 select title from meal where title like '%with%bread%';
@@ -65,21 +70,28 @@ select title from meal where meal.created_date between '2020-08-16' and '2020-08
 select * from meal  order by price desc limit 5;
 
 -- 6. Get the meals that have good reviews
-select meal.id,meal.title, review.stars 
+select meal.id,meal.title, avg(review.stars) 
 from meal 
 inner join review 
-where meal.id = review.meal_id and review.stars > 5;
+on meal.id = review.meal_id
+group by  review.meal_id;
+-- to get average of reviews for all the meals
+select meal_id, avg(stars) 
+from review
+group by meal_id;
 
 -- 7. Get reservations for a specific meal sorted by created_date(reservation created)
-select meal.title,reservation.number_of_guests,reservation.created_date 
+select meal.id,meal.title,sum(reservation.number_of_guests),reservation.created_date 
 from reservation 
 inner join meal 
-where reservation.meal_id = meal.id 
+where reservation.meal_id = meal.id
+group by reservation.meal_id
 order by reservation.created_date asc;
 
 -- 8. Sort all meals by average number of stars in the reviews
-select meal.title 
+select meal.title, avg(review.stars) as average 
 from meal 
 inner join review 
-where meal.id = review.meal_id 
-and review.stars > (select avg(stars) from review);
+on meal.id = review.meal_id 
+group by meal.title
+order by avg(review.stars);
