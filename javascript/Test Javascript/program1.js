@@ -1,4 +1,4 @@
-for (let i = 10; i <= 40; i++) {
+for (let i = 10; i <= 40; i=i+2) {
   if (i % 3 == 0 && i % 5 == 0) console.log(`${i} JACKPOT`);
   else if (i % 3 == 0) console.log(`${i} this is divisible by 3`);
   else if (i % 5 == 0) console.log(`${i} this is divisible by 5`);
