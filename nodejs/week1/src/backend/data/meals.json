@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Aebleflæsk",
+    "description": " ",
+    "location": "Tåmrsgårdsvej,2020",
+    "when": "2020-08-31 12:20:00.000000",
+    "max_reservations": 11,
+    "price": 75,
+    "created_date": "2020-08-11"
+  },
+  {
+    "id": 2,
+    "title": "Krebinetter",
+    "description": " ",
+    "location": "Banegårdsvej,2620",
+    "when": "2020-08-30 12:20:00.000000",
+    "max_reservations": 10,
+    "price": 85,
+    "created_date": "2020-08-11"
+  },
+  {
+    "id": 3,
+    "title": "Hønsekødssuppe",
+    "description": " ",
+    "location": "Hvidovresvej,2605",
+    "when": "2020-08-29 12:20:00.000000",
+    "max_reservations": 10,
+    "price": 95,
+    "created_date": "2020-08-11"
+  }
+]

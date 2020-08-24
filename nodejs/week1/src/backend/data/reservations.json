@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "number_of_guests": 4,
+    "created_date": "2020-08-12",
+    "contact_phone_number": 71445566,
+    "contact_name": "Oley",
+    "meal_id": 6
+  }
+]
