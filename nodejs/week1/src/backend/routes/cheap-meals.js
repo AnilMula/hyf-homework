@@ -5,9 +5,30 @@ const express = require("express");
 const app = express();
 
 const mealsData = require("../data/meals.json");
+// get reviews from the reviews.json
+const reviewData = require("../data/reviews.json");
 
 // if the price of meal is below 85 then it is cheap meal
-const cheapMeal = mealsData.filter((meal) => meal.price < 85);
+const cheapMeal = mealsData.filter((meal) => meal.price < 75);
+
+//compare two json files to add reviews that matches a meal id
+cheapMeal.forEach((meal) => {
+  //iterate over meals data
+  const matchedReviewData = []; // a temporary array to hold review data when there is a match
+  reviewData.forEach((review) => {
+    //iterate over reviews data
+    if (meal.id == review.meal_id) {
+      //if the meal has a review
+      matchedReviewData.push(review);
+    }
+    if (matchedReviewData.length == 0) {
+      // if there are no reviews for a meal
+      meal["reviews"] = ["NO reviews Yet"];
+    } else {
+      meal["reviews"] = matchedReviewData;
+    }
+  });
+});
 
 app.get("/cheapMeal", function (request, response) {
   response.send(cheapMeal);
