@@ -17,12 +17,7 @@ app.get("/randomMeal", function (request, response) {
       //if the meal has a review
       matchedReviewData.push(review);
     }
-    if (matchedReviewData.length == 0) {
-      // if there are no reviews for a meal
-      randomMeal["reviews"] = ["NO reviews Yet"];
-    } else {
-      randomMeal["reviews"] = matchedReviewData;
-    }
+    randomMeal["reviews"] = matchedReviewData;
   });
 
   response.send(randomMeal);

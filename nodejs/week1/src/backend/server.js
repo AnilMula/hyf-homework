@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Meal Sharing!");
+app.get("/", (request, response) => {
+  response.send("Meal Sharing Web App");
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
@@ -33,3 +33,6 @@ app.get("/reservations", reservations);
 //random reservations
 const randomReservations = require("./routes/reservation-random");
 app.get("/randResev", randomReservations);
+
+//export app for testing purposes
+module.exports = server;

@@ -21,12 +21,7 @@ cheapMeal.forEach((meal) => {
       //if the meal has a review
       matchedReviewData.push(review);
     }
-    if (matchedReviewData.length == 0) {
-      // if there are no reviews for a meal
-      meal["reviews"] = ["NO reviews Yet"];
-    } else {
-      meal["reviews"] = matchedReviewData;
-    }
+    meal["reviews"] = matchedReviewData;
   });
 });
 
