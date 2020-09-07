@@ -1,9 +1,11 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 const mealsData = require("../data/meals.json");
 
-app.get("/meals/:id", function (request, response) {
-  response.send(mealsData.filter((meal) => meal.id == request.params.id));
+router.use("/meals/:id", function (request, response) {
+  response.send(
+    mealsData.filter((meal) => meal.id == parseInt(request.params.id))
+  );
 });
 
-module.exports = app;
+module.exports = router;

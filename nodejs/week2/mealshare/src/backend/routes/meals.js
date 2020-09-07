@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 const mealsData = require("../data/meals.json");
 
-app.get("/meals", function (request, response) {
+router.get("/meals", function (request, response) {
   // to verify for empty object
   if (
     Object.keys(request.query).length === 0 &&
@@ -11,14 +11,16 @@ app.get("/meals", function (request, response) {
     response.send(mealsData);
   } else if (request.query.maxPrice) {
     response.send(
-      mealsData.filter((meal) => meal.price == request.query.maxPrice)
+      mealsData.filter((meal) => meal.price == prequest.query.maxPrice)
     );
   } else if (request.query.title) {
     response.send(
       mealsData.filter((meal) => meal.title.includes(`${request.query.title}`))
     );
   } else if (request.query.createdAfter) {
-    mealsData.filter((meal) => meal.created_date > request.query.createdAfter);
+    response.send(
+      mealsData.filter((meal) => meal.created_date > request.query.createdAfter)
+    );
   } else if (request.query.limit) {
     const limit = Number(request.query.limit);
     const limitedMeals = [];
@@ -32,4 +34,4 @@ app.get("/meals", function (request, response) {
   }
 });
 
-module.exports = app;
+module.exports = router;

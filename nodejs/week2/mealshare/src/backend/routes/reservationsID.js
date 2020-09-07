@@ -1,13 +1,13 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 const reservationsData = require("../data/reservations.json");
 
-app.get("/reservations/:id", function (request, response) {
+router.get("/reservations/:id", function (request, response) {
   response.send(
     reservationsData.filter(
-      (reservation) => reservation.id == request.params.id
+      (reservation) => reservation.id == parseInt(request.params.id)
     )
   );
 });
 
-module.exports = app;
+module.exports = router;

@@ -1,9 +1,9 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 const reviewsData = require("../data/reviews.json");
 
-app.get("/reviews", function (request, response) {
+router.get("/reviews", function (request, response) {
   response.send(reviewsData);
 });
 
-module.exports = app;
+module.exports = router;

@@ -1,9 +1,9 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 const reservationsData = require("../data/reservations.json");
 
-app.get("/reservations", function (request, response) {
+router.get("/reservations", function (request, response) {
   response.send(reservationsData);
 });
 
-module.exports = app;
+module.exports = router;
