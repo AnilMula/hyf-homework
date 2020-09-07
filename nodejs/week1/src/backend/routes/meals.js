@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 
 const mealsData = require("../data/meals.json");
 const reviewData = require("../data/reviews.json");
@@ -18,8 +18,8 @@ mealsData.forEach((meal) => {
   });
 });
 
-app.get("/meals", function (request, response) {
+router.use("/meals", function (request, response) {
   response.send(mealsData);
 });
 
-module.exports = app;
+module.exports = router;

@@ -1,13 +1,10 @@
 const express = require("express");
 const app = express();
+const router = express.Router();
 const port = 3000;
 
 app.get("/", (request, response) => {
   response.send("Meal Sharing Web App");
-});
-
-const server = app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
 });
 
 // to display all the meals
@@ -16,15 +13,15 @@ app.get("/meals", allMeals);
 
 //to dispaly a random meal
 const randomMeal = require("./routes/meal");
-app.get("/randomMeal", randomMeal);
+app.get("/randommeal", randomMeal);
 
 //to dispaly a cheap meal
 const cheapMeal = require("./routes/cheap-meals");
-app.get("/cheapMeal", cheapMeal);
+app.get("/cheapmeal", cheapMeal);
 
 //to display large meal
 const largeMeal = require("./routes/large-meals");
-app.get("/largeMeal", largeMeal);
+app.get("/largemeal", largeMeal);
 
 //all reservations
 const reservations = require("./routes/reservations");
@@ -32,7 +29,11 @@ app.get("/reservations", reservations);
 
 //random reservations
 const randomReservations = require("./routes/reservation-random");
-app.get("/randResev", randomReservations);
+app.get("/randresevrvation", randomReservations);
 
-//export app for testing purposes
+const server = app.listen(port, () => {
+  console.log(`Example router listening at http://localhost:${port}`);
+});
+
+//export router for testing purposes
 module.exports = server;

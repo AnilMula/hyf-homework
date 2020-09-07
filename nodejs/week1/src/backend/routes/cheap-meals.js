@@ -2,7 +2,7 @@
 //(including it's reviews) that are cheap (you define what a cheap meal is)
 
 const express = require("express");
-const app = express();
+const router = express.Router();
 
 const mealsData = require("../data/meals.json");
 // get reviews from the reviews.json
@@ -25,8 +25,8 @@ cheapMeal.forEach((meal) => {
   });
 });
 
-app.get("/cheapMeal", function (request, response) {
+router.use("/cheapMeal", function (request, response) {
   response.send(cheapMeal);
 });
 
-module.exports = app;
+module.exports = router;
