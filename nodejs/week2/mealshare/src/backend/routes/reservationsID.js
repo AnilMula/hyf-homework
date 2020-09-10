@@ -4,7 +4,7 @@ const reservationsData = require("../data/reservations.json");
 
 router.get("/reservations/:id", function (request, response) {
   response.send(
-    reservationsData.filter(
+    reservationsData.find(
       (reservation) => reservation.id == parseInt(request.params.id)
     )
   );

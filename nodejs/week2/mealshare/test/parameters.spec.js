@@ -42,7 +42,7 @@ describe("GET /meals/:id", () => {
 
 describe("GET /meals/:id", () => {
   test("responds with 400 when id not integer", async () => {
-    const sringId = "i-am-string";
+    const stringId = "i-am-string";
     const response = await request(app).get(`/meals/${stringId}`);
     expect(response.statusCode).toBe(400);
     expect(Array.isArray(response.body)).toBeFalsy();
@@ -103,7 +103,8 @@ describe("GET /reviews/:id", () => {
     const response = await request(app).get(`/reviews/${randomId}`);
     const foundReview = reviews.find((review) => review.id === randomId);
     expect(response.statusCode).toBe(200);
-    expect(response.body).toMatchObject(foundReview);
+
+    expect(response.body).toStrictEqual(foundReview);
     expect(Array.isArray(response.body)).toBeFalsy();
   });
 });

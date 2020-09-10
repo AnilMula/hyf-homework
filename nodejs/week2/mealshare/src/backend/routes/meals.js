@@ -10,27 +10,40 @@ router.get("/meals", function (request, response) {
   ) {
     response.send(mealsData);
   } else if (request.query.maxPrice) {
-    response.send(
-      mealsData.filter((meal) => meal.price == prequest.query.maxPrice)
-    );
+    if (isNaN(Number(request.query.maxPrice))) {
+      response.status(400).send(" id is not number");
+    } else {
+      response.send(
+        mealsData.filter((meal) => {
+          return meal.price < Number(request.query.maxPrice);
+        })
+      );
+    }
   } else if (request.query.title) {
     response.send(
       mealsData.filter((meal) => meal.title.includes(`${request.query.title}`))
     );
   } else if (request.query.createdAfter) {
-    response.send(
-      mealsData.filter((meal) => meal.created_date > request.query.createdAfter)
-    );
-  } else if (request.query.limit) {
-    const limit = Number(request.query.limit);
-    const limitedMeals = [];
-    for (let i = 0; i < limit; i++) {
-      //get a random number
-      const randomNumber = Math.floor(Math.random() * mealsData.length);
-
-      limitedMeals.push(mealsData[randomNumber]);
+    if (isNaN(Date.parse(request.query.createdAfter))) {
+      response.status(400).send(" date not parsable");
+    } else {
+      response.send(
+        mealsData.filter(
+          (meal) => meal.created_date < request.query.createdAfter
+        )
+      );
     }
-    response.send(limitedMeals);
+  } else if (request.query.limit) {
+    if (isNaN(Number(request.query.limit))) {
+      response.status(400).send(" id is not number");
+    } else {
+      const limit = Number(request.query.limit);
+      const limitedMeals = [];
+      for (let i = 0; i < limit; i++) {
+        limitedMeals.push(mealsData[i]);
+      }
+      response.send(limitedMeals);
+    }
   }
 });
 
