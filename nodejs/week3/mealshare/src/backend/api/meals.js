@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../database");
+const { json } = require("body-parser");
 
 //http://localhost:3000/api/meals
 //1.returns all meals
@@ -15,6 +16,24 @@ router.get("/", async (request, response) => {
       await knex("mealshare.meal")
         .select("title", "price")
         .where("price", "<", request.query.maxPrice)
+        .then((data) => response.json(data));
+    } else if (request.query.availableReservations) {
+      //7.Get meals that still has available reservations
+      /* select meal.id,meal.title,meal.max_reservations as Max,
+      sum(number_of_guests) as reserved, meal.max_reservations-sum(number_of_guests) as available from meal
+      inner join reservation on meal.id =reservation.meal_id
+      group by meal.id
+      having meal.max_reservations > sum(number_of_guests) */
+      await knex("mealshare.meal")
+        .select(
+          "meal.id",
+          "meal.title",
+          "meal.max_reservations",
+          knex.raw("sum(number_of_guests)")
+        )
+        .innerJoin("mealshare.reservation", "meal.id", "reservation.meal_id")
+        .groupBy("meal.id")
+        .having("meal.max_reservations", ">", "sum(number_of_guests)")
         .then((data) => response.json(data));
     } else if (request.query.title) {
       //8. Get meals that partially match a title.
