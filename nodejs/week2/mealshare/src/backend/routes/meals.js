@@ -29,7 +29,9 @@ router.get("/meals", function (request, response) {
     } else {
       response.send(
         mealsData.filter(
-          (meal) => meal.created_date < request.query.createdAfter
+          (meal) =>
+            Date.parse(meal.created_date) >
+            Date.parse(request.query.createdAfter)
         )
       );
     }
