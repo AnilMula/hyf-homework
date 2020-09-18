@@ -1,5 +1,5 @@
-window.handleMealsRequest = async () => {
-  document.title = "Meal Share : All meals....";
+window.handleReviewsRequest = () => {
+  document.title = "Meal Share : All reviews";
   document.body.innerHTML = `<body>
     <!-- Navbar -->
     <div class="w3-top">
@@ -47,16 +47,39 @@ window.handleMealsRequest = async () => {
         style="max-width: 800px"
         id="band"
       >
-        <h2 class="w3-wide">All Meals</h2>
+        <h2 class="w3-wide">All Reviews</h2>
         <p class="w3-opacity"><i>We love food</i></p>
         <p class="w3-justify">
           
         </p>
-        <div class="w3-row w3-padding-32" id = "all-meals">
-          
-        </div>
-        <div class="w3-row w3-padding-32" id = "each-meal">
-          <h5>each meal</h5>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-third">
+            <p>Name</p>
+            <img
+              src="../images/food6.jpg"
+              class="w3-round w3-margin-bottom"
+              alt="meal1"
+              style="width: 60%"
+            />
+          </div>
+          <div class="w3-third">
+            <p>Name</p>
+            <img
+              src="../images/food8.jpg"
+              class="w3-round w3-margin-bottom"
+              alt="Random Name"
+              style="width: 60%"
+            />
+          </div>
+          <div class="w3-third">
+            <p>Name</p>
+            <img
+              src="../images/food3.jpg"
+              class="w3-round"
+              alt="Random Name"
+              style="width: 60%"
+            />
+          </div>
         </div>
       </div>
     
@@ -82,31 +105,4 @@ window.handleMealsRequest = async () => {
     </footer>
 
       </body>`;
-
-  // a callback function to dispaly all the meals
-  const displayMealsOnDocument = (meals) => {
-    console.log(meals);
-    const body = document.getElementById("all-meals");
-
-    meals.forEach((meal, index) => {
-      body.innerHTML += `<div class="w3-third">
-            <p>${meal.title}</p>
-            <a href="#each-meal" id="image_link_each_meal"><img
-              src="../images/food${index + 1}.jpg"
-              class="w3-round"
-              alt="Random Name"
-              style="width: 60%"
-            /></a>
-          </div>`;
-    });
-  };
-  fetch("/api/meals")
-    .then((response) => response.json())
-    .then((meals) => displayMealsOnDocument(meals));
-
-  //onclick event on the image
-  const imageLink = document.getElementById("image_link_each_meal");
-  imageLink.addEventListener("click", () => {
-    window.alert("on click");
-  });
 };
