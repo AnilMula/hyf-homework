@@ -7,72 +7,121 @@ router.get("/", (request, response) => {
 });
 
 router.get("/add", async (request, response) => {
-  const result =
-    Number(request.query.firstParam) + Number(request.query.secondParam);
-  console.log(request.body);
-  response.send(
-    `sum of ${request.query.firstParam} and ${request.query.secondParam} is ${result}`
+  //query parameter is object so get object values in an array
+  const urlQueryParameters = Object.values(request.query);
+
+  //here object values are strings, convert them to numbers
+  const urlQueryParameterValues = urlQueryParameters.map((query) =>
+    Number(query)
   );
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const result = urlQueryParameterValues.reduce(reducer);
+
+  response.send(`sum is ${result}`);
 });
 
 router.get("/substract", (request, response) => {
-  const result =
-    Number(request.query.firstParam) - Number(request.query.secondParam);
+  //query parameter is object so get object values in an array
+  const urlQueryParameters = Object.values(request.query);
 
-  response.send(
-    `substraction of ${request.query.firstParam} and ${request.query.secondParam} is ${result}`
+  //here object values are strings, convert them to numbers
+  const urlQueryParameterValues = urlQueryParameters.map((query) =>
+    Number(query)
   );
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator - currentValue;
+  const result = urlQueryParameterValues.reduce(reducer);
+
+  response.send(`substraction is ${result}`);
 });
 
 router.get("/multiply", (request, response) => {
-  const result =
-    Number(request.query.firstParam) * Number(request.query.secondParam);
-  response.send(
-    `Multiplication of ${request.query.firstParam} and ${request.query.secondParam} is ${result}`
+  //query parameter is object so get object values in an array
+  const urlQueryParameters = Object.values(request.query);
+
+  //here object values are strings, convert them to numbers
+  const urlQueryParameterValues = urlQueryParameters.map((query) =>
+    Number(query)
   );
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator * currentValue;
+  const result = urlQueryParameterValues.reduce(reducer);
+  response.send(`Multiplication is ${result}`);
 });
 
 router.get("/divide", (request, response) => {
-  const result =
-    Number(request.query.firstParam) / Number(request.query.secondParam);
-  response.send(
-    `Division of ${request.query.firstParam} and ${request.query.secondParam} is ${result}`
+  //query parameter is object so get object values in an array
+  const urlQueryParameters = Object.values(request.query);
+
+  //here object values are strings, convert them to numbers
+  const urlQueryParameterValues = urlQueryParameters.map((query) =>
+    Number(query)
   );
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator / currentValue;
+  const result = urlQueryParameterValues.reduce(reducer);
+  response.send(`Division is ${result}`);
 });
 
 router.post("/add", (request, response) => {
-  const result =
-    Number(request.body.firstParam) + Number(request.body.secondParam);
+  //request.body is an object so get object values in an array
+  const requestBody = Object.values(request.body);
 
-  response.send(
-    `sum of ${request.body.firstParam} and ${request.body.secondParam} is ${result}`
-  );
+  //here object values are strings, convert them to numbers
+  const requestBodyValues = requestBody.map((value) => Number(value));
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const result = requestBodyValues.reduce(reducer);
+  console.log(request.body);
+
+  response.send(`sum is ${result}`);
 });
 
 router.post("/substract", (request, response) => {
-  const result =
-    Number(request.body.firstParam) - Number(request.body.secondParam);
+  //request.body is an object so get object values in an array
+  const requestBody = Object.values(request.body);
 
-  response.send(
-    `sum of ${request.body.firstParam} and ${request.body.secondParam} is ${result}`
-  );
+  //here object values are strings, convert them to numbers
+  const requestBodyValues = requestBody.map((value) => Number(value));
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator - currentValue;
+  const result = requestBodyValues.reduce(reducer);
+
+  response.send(`substraction is ${result}`);
 });
 
 router.post("/multiply", (request, response) => {
-  const result =
-    Number(request.body.firstParam) * Number(request.body.secondParam);
+  //request.body is an object so get object values in an array
+  const requestBody = Object.values(request.body);
 
-  response.send(
-    `sum of ${request.body.firstParam} and ${request.body.secondParam} is ${result}`
-  );
+  //here object values are strings, convert them to numbers
+  const requestBodyValues = requestBody.map((value) => Number(value));
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator * currentValue;
+  const result = requestBodyValues.reduce(reducer);
+
+  response.send(`multiply is${result}`);
 });
 
 router.post("/divide", (request, response) => {
-  const result =
-    Number(request.body.firstParam) / Number(request.body.secondParam);
+  //request.body is an object so get object values in an array
+  const requestBody = Object.values(request.body);
 
-  response.send(
-    `sum of ${request.body.firstParam} and ${request.body.secondParam} is ${result}`
-  );
+  //here object values are strings, convert them to numbers
+  const requestBodyValues = requestBody.map((value) => Number(value));
+
+  //use array.reduce() to calculate result
+  const reducer = (accumulator, currentValue) => accumulator / currentValue;
+  const result = requestBodyValues.reduce(reducer);
+
+  response.send(`division is ${result}`);
 });
 module.exports = router;
