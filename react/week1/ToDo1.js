@@ -1,10 +1,13 @@
 import React from 'react';
 
 const ToDo1 = (props) => {
+  const { style } = props;
+  const { activity, time } = props.task;
+  console.log(style.color);
   return (
-    <div style={props.style}>
+    <div style={style}>
       <p>
-        *{props.task.activity}, {props.task.time}
+        *{activity}, {time}
       </p>
     </div>
   );
