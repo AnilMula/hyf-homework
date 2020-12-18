@@ -1,6 +1,6 @@
 potatos
 cabbages
-Tomatos
+Tomato
 pepper
 onion
 beetroot
