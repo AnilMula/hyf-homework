@@ -1,0 +1,15 @@
+.my-modal {
+  width: 50%;
+  height: 20%;
+  background-color: bisque;
+  position: fixed;
+  left: 300px;
+}
+
+.my-modal-show {
+  width: 50%;
+  height: 20%;
+  background-color: rgb(194, 166, 131);
+  position: fixed;
+  left: 300px;
+}
